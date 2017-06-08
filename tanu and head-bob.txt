@@ -1,0 +1,35 @@
+
+import java.util.*;
+public class Main
+{
+    public static void main(String args[])throws java.lang.Exception
+    {
+       Scanner sc= new Scanner(System.in);
+       int i=0;
+       int t = sc.nextInt();
+       while(i<t)
+       {
+           int m=0,n=0;
+           int b=sc.nextInt();
+           String s=sc.next();
+           for(int j=0;j<b;j++)
+           {
+               if(s.charAt(j)=='I')
+                   m++;
+               else
+                  if(s.charAt(j)=='Y')
+                      n++;
+           }
+           if(m>0)
+               System.out.println("INDIAN");
+           else
+               if(n>0)
+                   System.out.println("NOT INDIAN");
+           else
+                   System.out.println("NOT SURE");
+        i++;
+       }
+
+       sc.close();
+    }
+}
