@@ -1,0 +1,37 @@
+
+import java.util.Arrays;
+
+import java.util.Scanner;
+public class Main
+{
+   
+   public static void main(String args[])
+   {
+       Scanner sc = new Scanner(System.in);
+   int a=sc.nextInt();
+   int b=1;
+  
+      
+   while(b<=a)
+   {
+     int c=sc.nextInt();
+   int n=0;
+  
+       n=c/100;
+   c=c%100;
+  n=n+c/50;
+  c=c%50;
+  n=n+c/10;
+  c=c%10;
+  n=n+c/5;
+  c=c%5;
+  n=n+c/2;
+  c=c%2;
+  n=n+c/1;
+  c=c/1;
+  System.out.println(n);
+     b++; 
+   }
+
+       }
+   }
