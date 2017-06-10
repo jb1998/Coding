@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.Scanner;
+public class MAIN 
+{
+    public static void main(String args[])throws java.lang.Exception
+    {
+        Scanner sc = new Scanner (System.in);
+        Double X,Y;
+        X = sc.nextDouble();
+        Y = sc.nextDouble();
+        if(((X>=0) && (X <= 2000))&&((Y>=0) && (Y<= 2000)))
+        {
+            if((X%5 == 0)&&((Y-X-0.5)>=0))
+                System.out.println(Y-X-0.5);
+                
+        else
+            System.out.println(Y);
+        }
+        else 
+            return;
+        
+}
+}
