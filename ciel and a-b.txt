@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String args[])
+    {
+        int a,b,c,d;
+        
+     Scanner sc = new Scanner(System.in);
+    a = sc.nextInt();
+    b = sc.nextInt();
+    c = a-b;
+    d=c%10;
+    if(d<9)
+        c++;
+    else
+        c--;
+    System.out.println(c);
+    }
+}
