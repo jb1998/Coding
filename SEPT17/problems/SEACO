@@ -1,0 +1,128 @@
+Sereja has an array A consisting of n integers. Initially, all the elements of array are zero.
+
+Sereja writes down m commands on a piece of a paper. The commands are enumerated from 1 to m. These commands can be of the following two types of commands:
+
+l r (l ≤ l ≤ r ≤ n) — Increase all elements of the array by one, whose indices belongs to the range [l, r]
+l r (1 ≤ l ≤ r ≤ m) — Execute all the commands whose indices are in the range [l, r]. It's guaranteed that r is strictly less than the enumeration/number of the current command.
+Can you please help Sereja in executing all the commands written on this piece of paper.
+
+Input
+The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows.
+
+The first line contains integers n and m. Next m lines contain Sereja's commands in the format, described in statement: t, l, r, where t - number of type (1 or 2).
+
+Output
+For each test case on different lines print an array a, after executing all the commands. The numbers have to be separated by spaces. As the numbers can be quite large, print them modulo 109 + 7.
+
+Constraints
+1 ≤ T ≤ 3
+1 ≤ n, m ≤ 105
+Subtasks
+Subtask #1 (20 points): 1 ≤ n, m ≤ 10
+Subtask #2 (30 points): 1 ≤ n, m ≤ 1000
+Subtask #3 (50 points): original constraints
+Example
+Input:
+3
+5 5
+1 1 2
+1 4 5
+2 1 2
+2 1 3
+2 3 4
+1 2
+1 1 1
+1 1 1
+10 10
+1 1 10
+2 1 1
+2 1 2
+2 1 3
+2 1 4
+2 1 5
+2 1 6
+2 1 7
+2 1 8
+2 1 9
+
+Output:
+7 7 0 7 7
+2
+512 512 512 512 512 512 512 512 512 512
+my solution
+import java.util.Scanner;
+ 
+class SEACO2 {
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+		    int a=sc.nextInt();
+		     int p=1;
+		        while(p++<=a)
+		     {
+		        	 int n=sc.nextInt();
+		             int m=sc.nextInt();
+		             long check[]=new long[n];
+		             long arr[][]=new long[m][3];
+		             for(int i=0;i<m;i++)
+		             {
+//		            	 arr[i][3]=0;
+		          	   for(int j=0;j<3;j++)
+		          	   {
+		          		   arr[i][j]=sc.nextLong();
+		          		   
+		          	   }
+		             }
+//		             int check[]=new int[n];
+		             int sample[][]=new int[m][n];
+		             for(int i=0;i<m;i++)
+		             {
+		            	if(arr[i][0]==1)
+		            	{
+		            		for(int j=(int) (arr[i][1]-1);j<=arr[i][2]-1;j++)
+		            		{
+		            			sample[i][j]=(sample[i][j]+1)%1000000007;
+		            			check[j]=(check[j]+sample[i][j])%1000000007;
+		            		}
+		            	}
+		            	else
+		            	{
+		            		for(int t=(int) (arr[i][1]-1);t<=arr[i][2]-1;t++)
+		            		{
+		            			int l;
+		            			for( l=0;l<n;l++)
+			            		{
+			            			sample[i][l]=(sample[i][l]+sample[t][l])%1000000007;
+		            				
+			            		}	
+		            				
+		            			
+		            		}
+		            		for(int j=0;j<n;j++)
+		            		{
+	            				check[j]=(check[j]+sample[i][j])%1000000007;
+		            		
+		            		}
+		            		
+		            	}
+		             }
+//		             for(int i=0;i<m-1;i++)
+//		             {
+//		            	 for(int j=0;j<n;j++)
+//		            	 {
+//		            		 sample[i+1][j]=(sample[i+1][j]+sample[i][j]);
+//		            	 }
+//		             }
+	              for(int i=0;i<n;i++)
+	              {
+	            	  if(i<n-1)
+	            	  System.out.print((check[i])%1000000007+" ");
+	            	  else
+	            		  System.out.println((check[i])%1000000007);
+	              }
+	              System.out.println();
+	}
+		        sc.close();
+}
+	
+}
+ 
