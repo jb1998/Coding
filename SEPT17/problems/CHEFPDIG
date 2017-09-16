@@ -1,0 +1,83 @@
+Chef likes to play with big numbers. Today, he has a big positive integer N. He can select any two digits from this number (the digits can be same but their positions should be different) and orders them in any one of the two possible ways. For each of these ways, he creates a two digit number from it (might contain leading zeros). Then, he will pick a character corresponding to the ASCII value equal to this number, i.e. the number 65 corresponds to 'A', 66 to 'B' and so on till 90 for 'Z'. Chef is only interested in finding which of the characters in the range 'A' to 'Z' can possibly be picked this way.
+
+Input
+The first line of the input contains an integer T denoting the number of test cases.
+
+The first line of the input contains an integer N.
+
+Output
+For each test case, output a string containing characters Chef can pick in sorted order If the resulting size of string is zero, you should output a new line.
+
+Constraints
+1 ≤ T ≤ 10
+1 ≤ N ≤ 10100000
+Subtasks
+Subtask #1 (40 points) N ≤ 1010
+Subtask #2 (60 points) Original Constraints
+Example
+Input:
+4
+65
+566
+11
+1623455078
+
+Output:
+A
+AB
+
+ACDFGHIJKLNPQRSTUVW
+
+
+MY SOLUTION
+ 
+import java.util.Scanner;
+ 
+class CHEFPDIG {
+ 
+	public static void main(String[] args) {
+		
+	     Scanner sc = new Scanner(System.in);
+	    int a=sc.nextInt();
+	     int p=1;
+	     while(p<=a)
+	     {
+	    	String str=sc.next();
+	    String ans="";
+	    int arr[]=new int[10];
+	    	for(int i=0;i<str.length();i++)
+	    	{
+	    		int aa=Integer.parseInt(str.charAt(i)+"");
+	    		arr[aa]++;
+	    	}
+	    	for(int j=0;j<26;j++)
+	    	{
+	    		int check='A'+j;
+	    		int fir=check%10;
+	    		int sec=check/10;
+	    		if(fir==sec)
+	    		{
+	    			if(arr[fir]>1)
+	    			{
+	    				char ch=(char)check;
+		    			ans+=ch;	
+	    			}
+	    		}
+	    		else
+	    		if(arr[fir]!=0 && arr[sec]!=0)
+	    		{
+	    			char ch=(char)check;
+	    			ans+=ch;
+	    			
+	    		}
+	    	}
+	   
+	    	 System.out.println(ans);
+	  
+	    	 p++;
+	     }
+	     sc.close();
+	}
+ 
+}
+ 
