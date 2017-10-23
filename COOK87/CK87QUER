@@ -1,0 +1,91 @@
+When the final results for the employement competition were announced, Nour Eddin Ramadan was thrilled to find his name among the accepted co-Chefs.
+
+However, after a while Nour started wasting time at the kitchen. He would usually spend hours talking to girls, and he even invited a girl to the kitchen pretending that he is the most valuable employer at Chef's restaurant.
+
+When Chef found out about it, he decided that it was time to teach Nour a lesson. Before going home that night, Chef called Nour to his office and asked him to solve the following problem, saying that he better come to work tomorrow with a solution for it, or otherwise, it would be better if he doesn't come at all:
+
+Given T queries, where each query contains a single number Y, Nour has to find the number of pairs A and B, such that the following equation holds true:
+
+A2 + B ≤ Y
+
+Where A is any positive integer, and B holds (1 ≤ B ≤ 700).
+
+Nour was really busy that night (Yeah he got that girl to go out with him after all!), and he asked for your help.
+
+ 
+
+Input
+The first line contains T denoting the number of test cases.
+
+T lines follows, Each line contains a single integer Y denoting the right side of the formula.
+
+Output
+For each test print a single line, containing a single number, indicating the answer for the test.
+
+Constraints
+1 ≤ T ≤ 105
+1 ≤ Y ≤ 1010
+Note that A must be any positive integer, and B must hold 1 ≤ B ≤ 700.
+ 
+
+Example
+Input:
+4
+2
+3
+4
+10000000000
+
+Output:
+1
+2
+3
+69999300
+
+
+my sol
+
+ 
+ 
+import java.util.Scanner;
+ 
+class CK87QUER {
+ 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+        int t=sc.nextInt();
+        int k=1;
+        while(k++<=t)
+        {
+        	long ans=sc.nextLong();
+        	long count=0;
+        	long a=1;
+        	long b=1;
+        	
+        	while(b<=700)
+        	{
+        	long small=ans-b;
+        	long start=1;
+        	long add=0;
+        	long end=100000;
+        	while(start<=end)
+        	{
+        		long mid=start+(end-start)/2;
+        		if((((long)mid)*mid)<=small)
+        		{
+        			add=mid;
+        			start=mid+1;
+        		}
+        		else
+        			end=mid-1;
+        	}
+        	count+=add;
+        		b++;
+        	}
+        	System.out.println(count);
+        }
+        sc.close();
+	}
+ 
+}
