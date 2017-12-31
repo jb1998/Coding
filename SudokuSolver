@@ -1,0 +1,62 @@
+
+		public static boolean sudokuSolver(int[][] board){
+		for(int i=0;i<9;i++)
+		{
+			for(int j=0;j<9;j++)
+			{
+				if(board[i][j]!=0)
+					continue;
+				
+				for(int k=1;k<=9;k++)
+				{
+					board[i][j]=k;
+					if(isPossible(board,i,j) && sudokuSolver(board))
+					{
+						return true;
+					}
+					board[i][j]=0;
+				}
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private static boolean isPossible(int[][] board, int i, int j) {
+		HashSet<Integer> has= new HashSet<Integer>();
+		for(int k=0;k<9;k++)
+		{
+			if(has.contains(board[i][k]))
+				return false;
+			if(board[i][k]!=0)
+			{
+				has.add(board[i][k]);
+			}
+		}
+		has.clear();
+		for(int k=0;k<9;k++)
+		{
+			if(has.contains(board[k][j]))
+				return false;
+			if(board[k][j]!=0)
+			{
+				has.add(board[k][j]);
+			}
+		}
+		has.clear();
+		for(int p=0;p<3;p++)
+		{
+			for(int o=0;o<3;o++)
+			{
+				int x=(i/3)*3+p;
+				int y=(j/3)*3+o;
+				if(has.contains(board[x][y]))
+					return false;
+				if(board[x][y]!=0)
+					has.add(board[x][y]);
+			}
+		}
+		
+		return true;
+	}
+	
