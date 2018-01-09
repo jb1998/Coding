@@ -1,0 +1,29 @@
+package competitive_algos;
+
+public class Kadane {
+    public static int kadane(int arr[])
+    {
+    	int sum_till_now=0;
+    	int ans_sum=Integer.MIN_VALUE;
+    	for(int i=0;i<arr.length;i++)
+    	{
+    		sum_till_now+=arr[i];
+    		if(sum_till_now>ans_sum)
+    		{
+    			ans_sum=sum_till_now;
+    		}
+    		if(sum_till_now<0)
+    		{
+    			sum_till_now=0;
+    		}
+    	}
+    	return ans_sum;
+    }
+	public static void main(String[] args) {
+		
+		int [] a = {-2, 7, 4, -1, 7, -1, -5, -3};
+        System.out.println("Maximum contiguous sum subarray is " +
+                                       kadane(a));
+	}
+
+}
