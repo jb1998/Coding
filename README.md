@@ -1,3 +1,5 @@
+# Competitive coding questions collection
+
 Here is the collection of questions of hackerearth , codechef , spoj and hackerrank implemented in Java.
 
 ## Getting Started
