@@ -1,0 +1,44 @@
+//                     * * * * *
+//                      * * * *
+//                       * * *
+//                        * *
+//                         *
+
+
+
+import static java.lang.Math.abs;
+import java.util.Scanner;
+ class CHEFAPAR {
+  
+    public static void main(String args[]) 
+    {
+       
+        Scanner sc = new Scanner(System.in);
+
+        int size = sc.nextInt();
+        
+printreverse(size);
+  
+        }
+        
+      		public static void printreverse(int n )
+	{
+           for(int i=1;i<=n;i++)
+           {
+                 for(int w=1;w<i;w++)
+               {
+                   System.out.print(" ");
+               }
+               for(int j=n;j>=i;j--)
+               {
+                   System.out.print("*"+" ");
+               }
+               System.out.println();
+               
+             
+           }
+    
+	
+        }
+	}
+        

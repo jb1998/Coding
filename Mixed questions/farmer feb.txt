@@ -1,0 +1,55 @@
+//Farmer Feb has three fields with potatoes planted in them. 
+//He harvested x potatoes from the first field, y potatoes from the second
+//field and is yet to harvest potatoes from the third field. Feb is very 
+//superstitious and believes that if the sum of potatoes he harvests from the
+//three fields is a prime number (http://en.wikipedia.org/wiki/Prime_number), 
+//he'll make a huge profit. Please help him by calculating for him the minimum
+//
+//number of potatoes that if harvested from the third field will make the sum of 
+//potatoes prime. At least one potato should be harvested from the third field.
+import java.util.Scanner;
+ class CHEFAPAR {
+  
+    public static void main(String args[]) 
+    {
+   
+    Scanner sc = new Scanner(System.in);
+    int steps = sc.nextInt();
+    int k=1;
+    while(k<=steps)
+    {
+        int ans=0;
+       int a=sc.nextInt();
+       int b = sc.nextInt();
+     for(int i=1;i<=1000;i++)
+     {
+         if(primefun((a+b+i)))
+         {
+             ans=i;
+         
+         break;
+         }
+     }
+     System.out.println(ans);
+        k++;
+    }
+	}
+
+    private static boolean primefun(int r) {
+        boolean aaa=true;
+        for(int m=2;m<=r/2;m++)
+        {
+            if(r%m==0)
+            {
+                aaa=false;
+//                break;
+            }
+        }
+        
+//        throw new UnsupportedOperationException("Not supported yet."); 
+//To change body of generated methods, choose Tools | Templates.
+return aaa;
+    }
+	}
+        
+       

@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String args[])throws java.lang.Exception
+    {
+        int b=1;
+       Scanner sc = new Scanner(System.in);
+       int a = sc.nextInt();
+       sc.nextLine();
+       while(b<=a)
+       {
+         int zero=0,one=0;
+         String c = sc.nextLine();
+         for(int i=0;i<c.length();i++)
+         {
+             if(c.charAt(i)=='0')
+                 
+                 zero ++;
+             else
+                 one ++ ;
+         }
+         if(zero>one)
+             System.out.println("LOSE");
+         else
+             System.out.println("WIN");
+           b++;
+       }
+       sc.close();
+    }
+}

@@ -1,0 +1,43 @@
+
+import java.util.Scanner;
+
+
+public class Payingup {
+   
+public static void main(String args[])
+{
+    Scanner sc = new Scanner(System.in);
+    int a=sc.nextInt();
+    int arr[]=new int[a];
+    for(int k=0;k<a;k++)
+    {
+        arr[k]=sc.nextInt();
+    }
+   int k= print(arr);
+   System.out.println(k);
+}
+	public static int print(int n[]) {
+       
+           for(int i=1;i<n.length;i++)
+           {
+                 int sumleft=0,sumright=0;
+               for(int j=0;j<i;j++)
+               {
+                   sumleft=sumleft+n[j];
+               }
+               for(int j=i+1;j<n.length;j++)
+               {
+                   sumright=sumright+n[j];
+               }
+               if(sumleft==sumright)
+               {
+                   return i;
+                   
+               }
+               
+                   
+           }
+return -1;
+	}
+
+}

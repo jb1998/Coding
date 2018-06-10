@@ -1,0 +1,22 @@
+import java.util.Arrays;
+import java.util.*;
+public class Main
+{
+    public static void main(String args[])
+    {
+int a;
+Scanner sc = new Scanner(System.in);
+a = sc.nextInt();
+int m[];
+        m = new int[a];
+        for(int i=0;i<a;i++)
+        {
+            m[i]=sc.nextInt();
+        }
+       Arrays.sort(m);
+       for(int i = 0; i<a;i++)
+       {
+           System.out.println(m[i]);
+       }
+    }
+}
