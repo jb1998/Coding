@@ -1,5 +1,5 @@
 package competitive_algos;
-
+// 50 algo
 public class Kadane {
     public static int kadane(int arr[])
     {
