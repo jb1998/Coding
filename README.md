@@ -1,5 +1,8 @@
 # Competitive coding questions collection :fire:
 
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=102)](https://github.com/jb1998/Coding)  &nbsp;&nbsp;
+
+
 :octocat: Here is the collection of questions of hackerearth , codechef , spoj and hackerrank implemented by me in Java :computer:
 
 ## Getting Started :heavy_check_mark:
