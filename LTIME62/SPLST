@@ -1,0 +1,41 @@
+import java.util.Scanner;
+ 
+class Codechef {
+ 
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int iterate=0;
+        int t=sc.nextInt();
+        while(iterate++<t){
+            int a=sc.nextInt();
+            int b=sc.nextInt();
+            int c=sc.nextInt();
+            int x=sc.nextInt();
+            int y=sc.nextInt();
+            boolean a1,a2,a3;
+            a1=check(a,b,c,x,y);
+            a2=check(a,c,b,x,y);
+            a3=check(c,b,a,x,y);
+            if(a1 || a2 || a3){
+                System.out.println("YES");
+            }else {
+                System.out.println("NO");
+            }
+        }
+    }
+    public static boolean check(int m,int n,int o,int x,int y){
+        int f1,f2;
+        f1=x-m;
+        f2=y-n;
+        if(f1>=0 && f2>=0 && f1+f2==o){
+            return true;
+        }
+        f1=x-n;
+        f2=y-m;
+        if(f1>=0 && f2>=0 && f1+f2==o){
+            return true;
+        }
+        return false;
+    }
+}
+ 
