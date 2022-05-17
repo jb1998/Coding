@@ -22,3 +22,6 @@
 
 ## Prerequisites :heavy_check_mark:
 :octocat: You can just run these codes on any IDEs like netbeans,eclipse or any online ide.
+
+- This repository is no longer maintained
+- I have been active on Leetcode check out my profile at : https://leetcode.com/jatinbindra171998/
